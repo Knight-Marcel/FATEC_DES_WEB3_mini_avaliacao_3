@@ -1,4 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+
 def natal(request):
- return HttpResponse("Não é natal.")
+ contexto = {'natal': True,
+ 'carnaval': False}
+ return render(request, 'natal.html', contexto)
